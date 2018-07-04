@@ -23,7 +23,7 @@ public class ParseApplications {
     public boolean parse(String xmlData) {
         boolean status = true;
         FeedEntry currentRecord = null;
-        boolean inEntry =false;
+        boolean inEntry = false;
         String textValue = "";
 
         try {
@@ -72,8 +72,8 @@ public class ParseApplications {
                 }
                 eventType = xpp.next();
             }
-        } catch(Exception e) {
-            status =false;
+        } catch (Exception e) {
+            status = false;
             e.printStackTrace();
         }
 

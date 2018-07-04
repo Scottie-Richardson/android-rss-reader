@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     private class DownloadData extends AsyncTask<String, Void, String> {
         private static final String TAG = "DownloadData";
+
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         protected String doInBackground(String... strings) {
             Log.d(TAG, "doInBackground: Starts with " + strings[0]);
             String rssFeed = downloadXML(strings[0]);
-            if(rssFeed == null) {
+            if (rssFeed == null) {
                 Log.e(TAG, "doInBackground: Error downloading");
             }
             return rssFeed;
@@ -71,12 +72,12 @@ public class MainActivity extends AppCompatActivity {
 
                 int charsRead;
                 char[] inputBuffer = new char[500];
-                while(true) {
+                while (true) {
                     charsRead = reader.read(inputBuffer);
-                    if(charsRead < 0) {
+                    if (charsRead < 0) {
                         break;
                     }
-                    if(charsRead > 0) {
+                    if (charsRead > 0) {
                         xmlResult.append(String.copyValueOf(inputBuffer, 0, charsRead));
                     }
                 }
